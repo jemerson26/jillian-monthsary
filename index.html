@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Monthsary✨</title>
+<style>
+/*
+RESET
+========================= */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make the "hidden" attribute always win */
+[hidden] {
+  display: none !important;
+}
+
+/*
+BODY
+========================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fffaf7;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/*
+HERO
+========================= */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffe4ec, #fff2df, #e8f4ff);
+}
+
+/* Small title */
+.small-title {
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  color: #9b7180;
+  margin-bottom: 18px;
+}
+
+/* Main title */
+.hero h1 {
+  font-size: clamp(50px, 8vw, 85px);
+  line-height: 0.95;
+  color: #302d3b;
+  margin-bottom: 30px;
+  animation: titleAppear 1s ease;
+}
+
+@keyframes titleAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intro */
+.intro {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #6b6468;
+  animation: titleAppear 1.2s ease;
+}
+
+/* =========================
+   FLOATING DECORATIONS
+========================= */
+.floating {
+  position: absolute;
+  font-size: 35px;
+  animation: floating 4s ease-in-out infinite;
+}
+
+.flower-one {
+  top: 18%;
+  left: 10%;
+}
+
+.flower-two {
+  top: 28%;
+  right: 11%;
+  animation-delay: 1s;
+}
+
+.flower-three {
+  bottom: 15%;
+  left: 18%;
+  animation-delay: 2s;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(8deg);
+  }
+}
+
+/* =========================
+   TEACHER SECTION
+========================= */
+.teachers-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 75px 25px 80px;
+}
+
+/* Grid */
+.teacher-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 380px);
+  justify-content: center;
+  gap: 30px;
+}
+
+/* =========================
+   TEACHER CARD
+========================= */
+.teacher-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.teacher-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================
+   PHOTO
+========================= */
+.photo {
+  height: 300px;
+  background: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Future images */
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   TEACHER INFO
+========================= */
+.teacher-info {
+  padding: 25px;
+}
+
+.teacher-info h3 {
+  font-size: 22px;
+  color: #302d3b;
+  margin-bottom: 8px;
+}
+
+.teacher-info p {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 17px;
+}
+
+.teacher-info span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c06c84;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 35px 20px 50px;
+  color: #999;
+  background: #fffaf7;
+}
+
+footer h3 {
+  color: #c06c84;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+footer p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==================================================
+   MESSAGE PAGE
+   IMPORTANT:
+   This page is allowed to scroll.
+================================================== */
+.message-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 30px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #ffe4ec, #fff2df, #e8f4ff);
+}
+
+/* MESSAGE DECORATIONS */
+.message-decoration {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.7;
+  animation: floating 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.decoration-one {
+  top: 15%;
+  left: 10%;
+}
+
+.decoration-two {
+  top: 20%;
+  right: 12%;
+  animation-delay: 1s;
+}
+
+.decoration-three {
+  bottom: 15%;
+  left: 15%;
+  animation-delay: 2s;
+}
+
+/* =========================
+   MESSAGE CONTAINER
+========================= */
+.message-container {
+  width: 700px;
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: messageAppear 0.8s ease;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+.envelope {
+  font-size: 70px;
+  margin-bottom: 18px;
+  animation: envelopeBounce 2s infinite;
+}
+
+@keyframes envelopeBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* =========================
+   TEACHER NAME
+========================= */
+.message-container h1 {
+  font-size: clamp(38px, 6vw, 58px);
+  color: #302d3b;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   MESSAGE CARD
+========================= */
+.message-card {
+  background: white;
+  padding: 45px 50px;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   HEART
+========================= */
+.heart {
+  font-size: 40px;
+  margin-bottom: 25px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* ACTUAL MESSAGE */
+.message-card > p {
+  font-size: 18px;
+  line-height: 2;
+  color: #5f5a5c;
+  text-align: left;
+  white-space: pre-line;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+.divider {
+  margin: 30px 0;
+  color: #d58a9d;
+  font-size: 20px;
+}
+
+/* =========================
+   SIGNATURE
+========================= */
+.signature {
+  color: #b86c82;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.signature strong {
+  font-size: 17px;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-button {
+  border: none;
+  padding: 14px 28px;
+  margin-top: 25px;
+  border-radius: 30px;
+  background: #302d3b;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-3px);
+  background: #4a4658;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 700px) {
+  .teacher-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    min-height: 65vh;
+    padding: 70px 20px;
+  }
+  .photo {
+    height: 280px;
+  }
+  .message-page {
+    align-items: flex-start;
+    padding: 50px 20px;
+  }
+  .message-card {
+    padding: 35px 25px;
+  }
+  .message-card > p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 45px;
+  }
+  .message-container h1 {
+    font-size: 34px;
+  }
+  .photo {
+    height: 240px;
+  }
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+.music-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #302d3b;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.music-toggle:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+
+.music-icon {
+  font-size: 16px;
+}
+
+@media (max-width: 400px) {
+  .music-toggle {
+    top: 12px;
+    right: 12px;
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- =========================
+BACKGROUND MUSIC
+=========================== -->
+<audio id="bgMusic" src="audio/Bruno Mars - Just The Way You Are (Official Music Video).mp3" loop preload="auto"></audio>
+<button id="musicToggle" class="music-toggle" type="button" aria-label="Turn music off">
+  <span class="music-icon"></span>
+  <span class="music-label">Music on</span>
+</button>
+
+<!-- =========================
+LANDING VIEW
+=========================== -->
+ <div id="landingView"> 
+  <!-- HERO / LANDING PAGE -->
+  <header class="hero">
+    <div class="floating flower-one">🌸</div> 
+        <div class="floating flower-two">✨</div> 
+        <div class="floating flower-three">🌷</div> 
+ 
+        <p class="small-title"> 
+            A SPECIAL DAY FOR YOU 
+        </p> 
+ 
+        <h1> 
+            Happy<br> 
+            Monthsary Jillian,<br> 
+            My hun! 💐 
+        </h1> 
+ 
+        <p class="intro"> 
+            Thank you so much for love. ❤️ 
+        </p>
+          </header> 
+
+  <!-- TEACHERS SECTION -->
+  <main class="teachers-section">
+    <div class="teacher-grid">
+      <!-- MA'AM BEVERLY TURING -->
+      <div
+        class="teacher-card"
+        onclick="openMessage(
+          'Happy Monthsary, Baby!',
+          'Kahit ang dami nating away nitong past weeks no,pinipili parin natin ang isat isa everyday and sobrang na-appreciate ko yun.Thank you sa lahat ng time,efforts,at pag-intindi na binibigay mo sa akin.\n\nHindi ako ma-showy sa words kung gaano kita ka-love pero binbawi konaman sa gawa.Sorry sa mga kulang ko at pagiging moody ko minsan, ikaw kasi eh.Salamat hindi ka sumusuko sa atin.\n\nAndito lang ako palagi for you,sa goodays and badays mo.Sabay nating ayusin lahat,sabay tayong matuto at mag grow.Pangako magiging better ako araw-araw para sa atin. ikaw yung pahinga ko jillian...\n\nHappy Monthsary Baby/Hun!. Stay ka lang sa akin ha?More months and years to come with you.I love you always❤️'
+        )"
+      >
+        <div class="photo">
+          <img src="images/bata.jpg" alt="" />
+        </div>
+        <div class="teacher-info">
+          <h3>Jillian Mae V. Dagohoy</h3>
+          <p>10/07/26💌
+          </p>
+          <span>Open Message →</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>Happy Monthsary Day!</h3>
+    <p>Thank you, Baby, for everything you do for me.</p>
+  </footer>
+</div>
+
+<!-- =========================
+MESSAGE VIEW
+=========================== -->
+ <div id="messageView" class="message-page" hidden> 
+ 
+        <div class="message-decoration decoration-one">🌸</div> 
+        <div class="message-decoration decoration-two">✨</div> 
+        <div class="message-decoration decoration-three">🌷</div> 
+ 
+        <main class="message-container"> 
+ 
+            <div class="envelope">💌</div> 
+ 
+            <p class="small-title">A MESSAGE FROM YOUR HUN</p> 
+ 
+            <h1 id="teacherName">Teacher</h1> 
+ 
+            <div class="message-card"> 
+ 
+                <div class="heart">❤️</div> 
+ 
+                <p id="teacherMessage">Thank you for everything you do.</p> 
+ 
+                <div class="divider">✦</div> 
+ 
+                <div class="signature"> 
+                    With love and gratitude, 
+                    <br> 
+                    <strong>Jem Masarap❤️</strong> 
+                </div> 
+ 
+            </div> 
+ 
+            <button class="back-button" onclick="goBack()"> 
+                ← Back 
+            </button> 
+ 
+        </main> 
+ 
+    </div> 
+ 
+ 
+    
+ 
+</body> 
+</html> 
+<script>
+/* =========================
+   BACKGROUND MUSIC SCRIPT
+========================= */
+const music = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
+let wantPlaying = true;
+music.volume = 0.5;
+
+function updateMusicButton() {
+  const icon = musicToggle.querySelector(".music-icon");
+  const label = musicToggle.querySelector(".music-label");
+  if (!music.paused) {
+    icon.textContent = "🔊";
+    label.textContent = "Music on";
+    musicToggle.setAttribute("aria-label", "Turn music off");
+  } else if (wantPlaying) {
+    icon.textContent = "🎵";
+    label.textContent = "Tap to play";
+    musicToggle.setAttribute("aria-label", "Play music");
+  } else {
+    icon.textContent = "🔇";
+    label.textContent = "Music off";
+    musicToggle.setAttribute("aria-label", "Turn music on");
+  }
+}
+
+music.addEventListener("play", updateMusicButton);
+music.addEventListener("pause", updateMusicButton);
+
+const unlockEvents = ["click", "keydown", "touchend"];
+function unlockMusic(event) {
+  if (event.target.closest && event.target.closest("#musicToggle")) {
+    return;
+  }
+  if (wantPlaying && music.paused) {
+    music.play().catch(function () {});
+  }
+}
+
+function armUnlock() {
+  unlockEvents.forEach(function (name) {
+    document.addEventListener(name, unlockMusic);
+  });
+}
+
+function disarmUnlock() {
+  unlockEvents.forEach(function (name) {
+    document.removeEventListener(name, unlockMusic);
+  });
+}
+
+music.addEventListener("playing", disarmUnlock);
+
+music.play().then(updateMusicButton).catch(function () {});
+updateMusicButton();
+armUnlock();
+
+musicToggle.addEventListener("click", function () {
+  if (music.paused) {
+    wantPlaying = true;
+    music.play().catch(function () {});
+  } else {
+    wantPlaying = false;
+    music.pause();
+  }
+  updateMusicButton();
+});
+
+/* ==================================================
+   LANDING PAGE <-> MESSAGE VIEW
+================================================== */
+const landingView = document.getElementById("landingView");
+const messageView = document.getElementById("messageView");
+
+function showView(view) {
+  const showMessage = (view === "message");
+  landingView.hidden = showMessage;
+  messageView.hidden = !showMessage;
+  document.title = showMessage
+    ? "Happy Monthsary 💌"
+    : "Happy Monthsary Day 💐";
+  window.scrollTo(0, 0);
+}
+
+function openMessage(name, message) {
+  try {
+    localStorage.setItem("teacherName", name);
+    localStorage.setItem("teacherMessage", message);
+  } catch (e) {}
+  document.getElementById("teacherName").textContent = name;
+  document.getElementById("teacherMessage").textContent = message;
+  showView("message");
+  history.pushState({ view: "message" }, "", "#message");
+}
+
+function goBack() {
+  if (history.state && history.state.view === "message") {
+    history.back();
+  } else {
+    history.replaceState(null, "", window.location.pathname);
+    showView("landing");
+  }
+}
+
+window.addEventListener("popstate", function () {
+  showView(
+    window.location.hash === "#message" ? "message" : "landing"
+  );
+});
+
+if (window.location.hash === "#message") {
+  let name = null;
+  let message = null;
+  try {
+    name = localStorage.getItem("teacherName");
+    message = localStorage.getItem("teacherMessage");
+  } catch (e) {}
+  if (name && message) {
+    document.getElementById("teacherName").textContent = name;
+    document.getElementById("teacherMessage").textContent = message;
+    history.replaceState({ view: "message" }, "", "#message");
+    showView("message");
+  } else {
+    history.replaceState(null, "", window.location.pathname);
+  }
+}
+</script>
+
+</body>
+</html>
